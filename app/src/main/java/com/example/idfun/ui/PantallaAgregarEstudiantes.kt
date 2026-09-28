@@ -61,20 +61,22 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 // OTRAS IMPORTACIONES
 // ===============================
 import android.app.Application
+import androidx.compose.material3.ExposedDropdownMenuBox
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.bibliotech.BibliotecaApplication
-import com.example.bibliotech.viewmodel.EstudianteViewModel
+import com.example.idfun.BibliotecaApplication
+import com.example.idfun.viewmodel.EstudianteViewModel
 
 
 // ===============================
 // IMPORTACIONES DEL PROYECTO
 // ===============================
-import com.example.bibliotech.ui.componentes.TarjetaEstudiante
+import com.example.idfun.ui.componentes.TarjetaEstudiante
 
 
 
@@ -622,6 +624,59 @@ fun PantallaEstudiantes(
             Spacer(
                 modifier = Modifier.height(16.dp)
             )
+            {
+
+                //------------Carnet------------
+                OutlinedTextField(
+                    values = carnet,
+                    onValueChange = {Text(carnet)},
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedTextColor = Color.White,
+                        unfocusedTextColor = Color.White,
+                        focusedBorderColor = Color.Blue,
+                        unfocusedBorderColor = Color.LightGray,
+                        focusedLabelColor = Color.Blue,
+                        unfocusedLabelColor = Color.White,
+
+                    )
+                )
+            }
+
+            Spacer(
+                modifier = Modifier.height(16.dp)
+            ){
+
+                //------------Apellido------------
+                OutlinedTextField(
+                    values = apellido,
+                    onValueChange = {Text(apellido)},
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedTextColor = Color.White,
+                        unfocusedTextColor = Color.White,
+                        focusedBorderColor = Color.Blue,
+                        unfocusedBorderColor = Color.LightGray,
+                        focusedLabelColor = Color.Blue,
+                        unfocusedLabelColor = Color.White,
+
+                        )
+                )
+            }
+
+            ExposedDropdownMenuBox(
+                expanded = expandirGrado,
+                onExpandedChange = expandirGrado = !expandirGrado
+            ) { }
+
+            Spacer(modifier = Modifier.padding(all = 10.dp))
+            //**********************ESTADO ACTIVO / INACTIVO*********
+            Row{
+                CheckBox(
+                    checked = activo,
+                    oncheck
+                )
+            }
         }
     }
 }
