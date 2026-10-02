@@ -25,9 +25,11 @@ fun PantallaPrestamo(
             fontSize = 24.sp
         )
 
+
         Spacer(
             modifier = Modifier.height(16.dp)
         )
+
 
         Text(
             text = "Aquí se registrarán los préstamos."

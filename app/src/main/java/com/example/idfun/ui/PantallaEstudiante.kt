@@ -53,7 +53,7 @@ import com.example.idfun.viewmodel.EstudianteViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PantallaEstudiante(
+fun PantallaEstudiantes(
     onRegresar: () -> Unit,
     onVerDetalles: (Int) -> Unit,
     onAgregarEstudiante: () -> Unit,

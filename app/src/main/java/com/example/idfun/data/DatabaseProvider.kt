@@ -15,6 +15,9 @@ object DatabaseProvider {
                 BibliotecaDatabase::class.java,
                 "bibliotech_database"
             )
+                // Como subimos de versión 1 a 2, esto borra y recrea
+                // la BD si no hay una migración real. Está bien en desarrollo.
+                .fallbackToDestructiveMigration()
                 .build()
 
             INSTANCE = instance

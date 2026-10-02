@@ -20,7 +20,6 @@ fun PantallaLibrosPrestados(
         modifier = Modifier.padding(16.dp)
     ) {
 
-
         Text(
             text = "Libros prestados",
             fontSize = 24.sp
